@@ -1,0 +1,62 @@
+.h1 {
+    color: rgb(151, 18, 18);
+    background-color: black;
+    margin-bottom: 10px;
+    border: 1px solid rgb(177, 177, 53); /* Updated color */
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 100%; /* Updated color */
+}
+
+/* Style for the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(10, 10, 10); /* Updated background color */
+    color: rgb(239, 178, 10);
+    height: 100%; /* Updated color */
+}
+
+/* Style for the input field */
+#input-field {
+    margin-bottom: 10px;
+    border: 1px solid black; /* Updated color */
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: orange; /* Updated color */
+    color: rgb(245, 139, 10); /* Updated color */
+}
+
+/* Style for the buttons */
+#button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: purple; /* Updated color */
+    color: rgb(242, 167, 17); /* Updated color */
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+#button:hover {
+    background-color: rgb(237, 85, 15); /* Updated color */
+}
+
+/* Style for the names list */
+#names-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#names-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(150, 13, 141); /* Updated color */
+}

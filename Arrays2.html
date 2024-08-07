@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+<body>
+    <div class="container">
+    <title>Arrays with Names</title>
+    <h1>Arrays with Names</h1>
+    
+    <style>
+        .h1
+        {
+            color: rgb(235, 232, 232);
+            background-color: black;
+            margin-bottom: 10px;
+    border: 1px solid rgb(243, 237, 237); /* Updated color */
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 100%; /* Updated color */
+        }
+        /* Style for the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: black; /* Updated background color */
+    color: rgb(245, 239, 239);
+    height: 100%; /* Updated color */
+}
+
+/* Style for the input field */
+.input-field {
+    margin-bottom: 10px;
+    border: 1px solid black; /* Updated color */
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: orange; /* Updated color */
+    color: rgb(245, 139, 10); /* Updated color */
+}
+
+/* Style for the buttons */
+.button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: purple; /* Updated color */
+    color: rgb(242, 167, 17); /* Updated color */
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: rgb(237, 85, 15); /* Updated color */
+}
+
+/* Style for the names list */
+.names-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.names-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(28, 192, 85); /* Updated color */
+}
+    </style>
+    <p>Here is a list of names:</p>
+    
+    <ul id="names-list"></ul>
+
+    <form id="add-name-form">
+        <input type="text" id="name-input" class="input-field" placeholder="Enter a name" required> <!-- Added input field -->
+        <button type="submit" id="addButton" class="button">Add person information</button> <!-- Updated id and added class -->
+    </form>
+
+    <button id="delete-names-button" class="button">Delete All Names</button> <!-- Added class -->
+
+    <script>
+        function getNames() {
+            return ["John", "Jane", "Bob"]; // Replace with your own logic to get the names
+        }
+
+        function printMarkSheet(name, date, marks) {
+            console.log(`Name: ${name}`);
+            console.log(`Date: ${date}`);
+            console.log(`Mark: ${marks}`);
+        }
+
+        function addName() {
+            var name = prompt("Enter a name:");
+            var date = prompt("Enter a date:");
+            var marks = prompt("Enter marks:");
+            printMarkSheet(name, date, marks);
+        }
+        document.getElementById("addButton").addEventListener("click", addName); <!-- Updated id -->
+
+        // Access the names array from the imported JavaScript file
+        var names = getNames();
+
+        // Populate the list with names
+        var namesList = document.getElementById("names-list");
+        names.forEach(function(name) {
+            var li = document.createElement("li");
+            li.textContent = name;
+            namesList.appendChild(li);
+        });
+
+        // Add event listener to the form
+        var addNameForm = document.getElementById("add-name-form");
+        addNameForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            var nameInput = document.getElementById("name-input");
+            var newName = nameInput.value;
+            if (newName) {
+                names.push(newName);
+                var li = document.createElement("li");
+                li.textContent = newName;
+                namesList.appendChild(li);
+                nameInput.value = ""; // Clear the input field
+            }
+        });
+
+        // Add event listener to the delete button
+        var deleteNamesButton = document.getElementById("delete-names-button");
+        deleteNamesButton.addEventListener("click", function() {
+            names = []; // Clear the names array
+            namesList.innerHTML = ""; // Clear the list
+        });
+    </script>
+    </div>
+</body>
+</html>
